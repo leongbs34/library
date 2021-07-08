@@ -1,6 +1,7 @@
-body{
+html,body{
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 form {
@@ -28,11 +29,20 @@ header{
                         #0B54A3 0 10px,
                         #034EA1 10px 20px);
     margin-top: 0;
-    height: 10vh;
+    height: 10%;
+    box-shadow: inset 0px -3px 0px 0px gold;
 }
 
 ul{
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+#bookshelf{
+    display: flex;
+    background-color: brown;
+    height: 90%;
+    width: 100%;
+    background-image: url(wall.jpg);
 }
