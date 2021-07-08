@@ -1,3 +1,5 @@
+let myLibrary = [];
+
 function book(title, author, pages, read){
     this.title = title;
     this.author = author;
@@ -8,3 +10,18 @@ function book(title, author, pages, read){
         return `${title} by ${author}, ${pages} pages, ` + (read ? 'already read' : 'not read yet');
     }
 }
+
+function addBookToLibrary(book){
+    myLibrary.push(book);
+}
+
+function displayBooks(){
+    const books = myLibrary.map(book => book);
+    console.table(books);
+}
+
+const form = document.querySelector('form');
+const btnAddBook = document.querySelector('button.addBook');
+btnAddBook.addEventListener('click', function(){
+    form.setAttribute('style', 'visibility : visible');
+})
