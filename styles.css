@@ -39,10 +39,27 @@ ul{
     margin: 0;
 }
 
-#bookshelf{
+#main-background{
     display: flex;
-    background-color: brown;
     height: 90%;
     width: 100%;
     background-image: url(wall.jpg);
+}
+
+#bookshelf{
+    display: grid;
+    grid-template-areas:'book1 book2 book3 book4'
+                        'book5 book6 book7 book8';
+    position: relative;
+    width: 80%;
+    height: 60%;
+    left: 10%;
+    top: 20%;
+    gap: 5% 2%;
+}
+
+.addBook{
+    position: relative;
+    height: 3em;
+    left: 50%;
 }
