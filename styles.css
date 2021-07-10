@@ -1,4 +1,7 @@
-html,body{
+html,
+body,
+ul,
+.material-icons{
     margin: 0;
     padding: 0;
     height: 100%;
@@ -35,8 +38,6 @@ header{
 
 ul{
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 #main-background{
@@ -58,8 +59,24 @@ ul{
     gap: 5% 2%;
 }
 
-.addBook{
+#addBtn{
     position: relative;
-    height: 3em;
-    left: 50%;
+    left: 5%;
+    top: 5%;
+    font-size: 2.5em;
+    background-image:linear-gradient(135deg, #2dcadf, #487fe6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    font-weight: 900;
+    opacity: 0.9;
+    transition: transform 0.25s, opacity 0.25s, box-shadow;
+}
+
+#addBtn:hover{
+    transform: rotate(90deg) scale(1.2);
+    opacity: 1;
+    box-shadow: 0 0 0.5em 0 #4666FF;
 }
