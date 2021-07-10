@@ -4,6 +4,10 @@ ul,
 .material-icons{
     margin: 0;
     padding: 0;
+}
+
+html,
+body{
     height: 100%;
 }
 
@@ -11,18 +15,19 @@ form {
     visibility: hidden;
 }
 
-h1{
-    position: absolute;
-    color: white;
-    margin: 0;
-    top: 3vh;
-}
-
-h2{
-    position: relative;
+.topTitle{
     margin: 0;
     color:goldenrod;
-    top: 1.3vh;
+    font-size: 1.6em;
+    line-height:0.7em;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.btmTitle{
+    color: white;
+    margin: 0;
+    font-size: 1.6em;
 }
 
 header{
@@ -34,10 +39,6 @@ header{
     margin-top: 0;
     height: 10%;
     box-shadow: inset 0px -3px 0px 0px gold;
-}
-
-ul{
-    list-style: none;
 }
 
 #main-background{
@@ -79,4 +80,12 @@ ul{
     transform: rotate(90deg) scale(1.2);
     opacity: 1;
     box-shadow: 0 0 0.5em 0 #4666FF;
+}
+
+#titleGrid{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: center;
+    text-align: center;
 }
