@@ -11,13 +11,9 @@ body{
     height: 100%;
 }
 
-form {
-    visibility: hidden;
-}
-
 .topTitle{
     margin: 0;
-    color:goldenrod;
+    color:#FFDA87;
     font-size: 1.6em;
     line-height:0.7em;
     font-weight: 700;
@@ -42,7 +38,7 @@ header{
                         #034EA1 10px 20px);
     margin-top: 0;
     height: 10%;
-    box-shadow: inset 0px -3px 0px 0px gold;
+    box-shadow: inset 0px -3px 0px 0px #FFDA87;
 }
 
 #main-background{
@@ -92,4 +88,22 @@ header{
     width: 30%;
     justify-content: center;
     text-align: center;
+}
+
+#bookForm{
+    background-color: white;
+    height: 60%;
+    margin: auto;
+}
+
+#formBackground{
+    position: absolute;
+    display: flex;
+    background-color:rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    justify-content: center;
+    visibility: hidden;
 }

@@ -20,10 +20,19 @@ function displayBooks(){
     console.table(books);
 }
 
-const form = document.querySelector('form');
-const btnAddBook = document.querySelector('button.addBook');
+const formBackground = document.querySelector('#formBackground');
+const bookForm = document.querySelector('#bookForm');
+const btnAddBook = document.querySelector('button#addBtn');
 btnAddBook.addEventListener('click', function(){
-    form.setAttribute('style', 'visibility : visible');
+    formBackground.setAttribute('style', 'visibility : visible');
+})
+
+formBackground.addEventListener('click', ()=>{
+    formBackground.setAttribute('style', 'visibility : hidden');
+})
+
+bookForm.addEventListener('click', (e)=>{
+    e.stopPropagation();
 })
 
 for(let i = 1; i <= 8; i++){
