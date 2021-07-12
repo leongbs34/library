@@ -3,6 +3,9 @@
     <head>
         <link href="styles.css" rel='stylesheet'>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap" rel="stylesheet">
         <title>Library</title>
     </head>
     <body>
@@ -31,15 +34,23 @@
         
         <div id='formBackground'>
             <div id='bookForm'>
+                <div id='formHeader'>
+                    <div class='headerText'>New Book</div>
+                </div>
                 <form>
                     <label for='title'>Title</label><br>
-                    <input type="text" name="title"><br>
+                    <input type="text" name="title" placeholder="Title"><br>
+
                     <label for='author'>Author</label><br>
-                    <input type="text" name="author"><br>
+                    <input type="text" name="author" placeholder="Author"><br>
+
                     <label for='pages'>Pages</label><br>
-                    <input type="text" name="pages"><br>
-                    <label for='read'>Have you finished reading the book?</label><br>
-                    <input type="checkbox" value='Yes'><br>
+                    <input type="text" name="pages" placeholder="Pages"><br>
+
+                    <label for='read' class='switch'>Have you finished reading the book?
+                        <input type="checkbox" value='Yes'><br>
+                    </label><br>
+
                     <input type='submit' value='Submit'>
                 </form>
             </div>

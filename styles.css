@@ -4,6 +4,7 @@ ul,
 .material-icons{
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 html,
@@ -14,16 +15,17 @@ body{
 .topTitle{
     margin: 0;
     color:#FFDA87;
-    font-size: 1.6em;
-    line-height:0.7em;
-    font-weight: 700;
+    font-size: 2em;
+    line-height:0.6em;
     text-decoration: underline;
+    font-weight: bold;
 }
 
 .btmTitle{
     color: white;
     margin: 0;
     font-size: 1.6em;
+    font-weight: bold;
 }
 
 a {
@@ -55,7 +57,7 @@ header{
     position: relative;
     width: 80%;
     height: 60%;
-    left: 10%;
+    left: 6%;
     top: 20%;
     gap: 5% 2%;
 }
@@ -92,8 +94,13 @@ header{
 
 #bookForm{
     background-color: white;
-    height: 60%;
+    height: 40%;
+    width: 25%;
     margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.431);
+    border: 2px solid white;
 }
 
 #formBackground{
@@ -106,4 +113,42 @@ header{
     z-index: 1;
     justify-content: center;
     visibility: hidden;
+    display: 
+}
+
+input[type='text']{
+    margin: 0.2em 0 1em -0.5em;
+    box-sizing: border-box;
+    border-style: solid;
+    padding: 0.5em;
+    border: none;
+    border-bottom: 2px solid rgba(68, 65, 65, 0.329);
+    outline: none;
+}
+
+input[type='submit']{
+    float: right;
+}
+
+#formHeader{
+    display: flex;
+    background-color: brown;
+    width: 100%;
+    height: 15%;
+    justify-content: center;
+}
+
+.headerText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.6em;
+    color: white;
+    text-shadow: 2px 2px 10px #000000;
+}
+
+form{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
 }
