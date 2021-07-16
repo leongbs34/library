@@ -20,16 +20,7 @@
 
         <div id="main-background">
             <button id= "addBtn" class="material-icons">add</button>
-            <div id="bookshelf">
-                <button id="book1"></button>
-                <button id="book2"></button>
-                <button id="book3"></button>
-                <button id="book4"></button>
-                <button id="book5"></button>
-                <button id="book6"></button>
-                <button id="book7"></button>
-                <button id="book8"></button>
-            </div> 
+            <div class="bookshelf"></div> 
         </div>
         
         <div id='formBackground'>
@@ -48,10 +39,10 @@
                     <input type="text" name="pages" placeholder="Pages"><br>
 
                     <label for='read' class='switch'>Have you finished reading the book?
-                        <input type="checkbox" value='Yes'><br>
+                        <input type="checkbox" name='read'><br>
                     </label><br>
 
-                    <input type='submit' value='Submit'>
+                    <button class='submitBtn' type="button">Submit</button>
                 </form>
             </div>
         </div>
