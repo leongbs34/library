@@ -58,6 +58,21 @@ function checkBookExists(bID){
     return result;
 }
 
+function editBook(e){
+    let bID = new String(this.id);
+    bID = bID.slice(4);
+    formBackground.setAttribute('style', 'visibility : visible');
+    result = checkBookExists(bID)
+    document.querySelector('.headerText').textContent = `Edit Book`;
+    inputs[0].value = result.title;
+    inputs[1].value = result.author;
+    inputs[2].value = result.pages;
+    labelID.textContent = result.bookID;
+    if(result.read === 'Completed'){
+        document.querySelector('input[name="read"]').checked = true;
+    }
+}
+
 btnAddBook.addEventListener('click', function(){
     formBackground.setAttribute('style', 'visibility : visible');
 })
@@ -103,21 +118,6 @@ submitBtn.addEventListener('click', ()=>{
     document.querySelector(`#book${bID}`).classList.remove('invi');
     document.querySelector(`#book${bID}`).classList.add('bookBackground');
 })
-
-function editBook(e){
-    let bID = new String(this.id);
-    bID = bID.slice(4);
-    formBackground.setAttribute('style', 'visibility : visible');
-    result = checkBookExists(bID)
-    document.querySelector('.headerText').textContent = `Edit Book`;
-    inputs[0].value = result.title;
-    inputs[1].value = result.author;
-    inputs[2].value = result.pages;
-    labelID.textContent = result.bookID;
-    if(result.read === 'Completed'){
-        document.querySelector('input[name="read"]').checked = true;
-    }
-}
 
 const editInfo = document.querySelectorAll('.bookshelf button');
 editInfo.forEach(info => {
