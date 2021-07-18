@@ -7,6 +7,10 @@ ul,
     font-family: 'Poppins', sans-serif;
 }
 
+.material-icons{
+    text-shadow: none;
+}
+
 html,
 body{
     height: 100%;
@@ -111,7 +115,6 @@ header{
     width: 100%;
     top: 0;
     justify-content: center;
-    visibility: hidden;
 }
 
 input[type='text']{
@@ -152,13 +155,14 @@ form{
 }
 
 .invi{
-    visibility: hidden;
+    display: none !important;
 }
 
 .bookshelf button{
     display: flex;
     padding: 1em;
     border: none;
+    flex-direction: column;
 }
 
 .bookInfo{
@@ -186,4 +190,14 @@ form{
 
 .bookBackground:hover{
     filter: brightness(92%);
+}
+
+.btnDelete{
+    align-self: flex-end;
+    opacity: 0;
+    transition: opacity 0.25s linear;
+}
+
+.bookBackground:hover .btnDelete{
+    opacity: 1;
 }

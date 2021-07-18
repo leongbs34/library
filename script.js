@@ -40,6 +40,11 @@ function createBookGrid(bID){
     book.classList.add('invi');
     book.setAttribute('style', `grid-area: book${bID}`);
     const div = document.createElement('div');
+    const span = document.createElement('span');
+    span.classList.add("material-icons");
+    span.classList.add("btnDelete");
+    span.textContent = 'delete';
+    book.append(span);
     book.append(div);
     const bookChild = book.lastChild;
     bookChild.classList.add('bookInfo');
@@ -58,10 +63,14 @@ function checkBookExists(bID){
     return result;
 }
 
-function editBook(e){
-    let bID = new String(this.id);
-    bID = bID.slice(4);
-    formBackground.setAttribute('style', 'visibility : visible');
+function sliceID(bookid){
+    let bID = new String(bookid);
+    return parseInt(bID.slice(4));
+}
+
+function openEditForm(e){
+    bID = sliceID(this.id);
+    formBackground.classList.remove('invi');
     result = checkBookExists(bID)
     document.querySelector('.headerText').textContent = `Edit Book`;
     inputs[0].value = result.title;
@@ -73,12 +82,40 @@ function editBook(e){
     }
 }
 
+function editBook(bID){
+    let editedBook = checkBookExists(bID);
+    editedBook.title = inputs[0].value;
+    editedBook.author = inputs[1].value
+    editedBook.pages = inputs[2].value
+    editedBook.read = inputs[3].value
+}
+
+function deleteBook(e){
+    e.stopPropagation();
+    let bID = sliceID(this.parentNode.id);
+    const deletedBook = checkBookExists(bID)
+    deletedBook.bookID = '';
+    for(let i = bID + 1; i <= myLibrary.length; i++){
+        const editedBook = checkBookExists(i);
+        const newID = i - 1;
+        editedBook.bookID = newID;
+        const bookInputs = document.querySelectorAll(`#book${newID} .bookInfo .bookInput`);
+        bookInputs[0].textContent = `Title: ${myLibrary[newID].title}`;
+        bookInputs[1].textContent = `Author: ${myLibrary[newID].author}`;
+        bookInputs[2].textContent = `Pages: ${myLibrary[newID].pages}`;
+        bookInputs[3].textContent = `Read: ${myLibrary[newID].read}`;
+    }
+    const books = document.querySelector(`#book${myLibrary.length}`);
+    books.classList.add('invi');
+    myLibrary.splice(bID - 1, 1);
+}
+
 btnAddBook.addEventListener('click', function(){
-    formBackground.setAttribute('style', 'visibility : visible');
+    formBackground.classList.remove('invi');
 })
 
 formBackground.addEventListener('click', ()=>{
-    formBackground.setAttribute('style', 'visibility : hidden');
+    formBackground.classList.add('invi');
     clearForm();
 })
 
@@ -93,7 +130,7 @@ for(let i = 1; i <= 8; i++){
 const submitBtn = document.querySelector('.submitBtn');
 submitBtn.addEventListener('click', ()=>{
     let bID;
-    formBackground.setAttribute('style', 'visibility : hidden');
+    formBackground.classList.add('invi');
     inputs[3].value = document.querySelector('input[name="read"]').checked ? 'Completed' : 'Not completed';
     if(typeof checkBookExists(parseInt(labelID.textContent)) === 'undefined'){
         bID = myLibrary.length + 1;
@@ -102,11 +139,7 @@ submitBtn.addEventListener('click', ()=>{
     }
     else{
         bID = parseInt(labelID.textContent);
-        let editedBook = checkBookExists(bID);
-        editedBook.title = inputs[0].value;
-        editedBook.author = inputs[1].value
-        editedBook.pages = inputs[2].value
-        editedBook.read = inputs[3].value
+        editBook(bID);
     }
     clearForm();
     if(bID > 8){ createBookGrid(bID); }
@@ -121,5 +154,8 @@ submitBtn.addEventListener('click', ()=>{
 
 const editInfo = document.querySelectorAll('.bookshelf button');
 editInfo.forEach(info => {
-    info.addEventListener('click', editBook)
+    info.addEventListener('click', openEditForm);
 })
+
+const btnDelete = document.querySelectorAll('.btnDelete');
+btnDelete.forEach(button => button.addEventListener('click', deleteBook));
