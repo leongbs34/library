@@ -56,11 +56,11 @@ header{
 
 .bookshelf{
     display: grid;
-    grid-template-areas:'book1 book2 book3 book4'
-                        'book5 book6 book7 book8';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     position: relative;
     width: 80%;
-    height: 60%;
+    min-height: 60%;
+    /* height: auto; */
     left: 6%;
     top: 20%;
     gap: 5% 2%;
@@ -195,7 +195,11 @@ form{
 .btnDelete{
     align-self: flex-end;
     opacity: 0;
-    transition: opacity 0.25s linear;
+    transition: opacity 0.25s linear, color 0.15s linear;
+}
+
+.btnDelete:hover{
+    color:red
 }
 
 .bookBackground:hover .btnDelete{

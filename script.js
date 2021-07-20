@@ -33,12 +33,11 @@ function clearForm(){
     document.querySelector('.headerText').textContent = 'New Book';
 }
 
-function createBookGrid(bID){
+function createBookButton(bID){
     bookshelf.append(document.createElement('button'));
     bookshelf.lastChild.id = `book${bID}`;
     const book = document.querySelector(`#book${bID}`);
     book.classList.add('invi');
-    book.setAttribute('style', `grid-area: book${bID}`);
     const div = document.createElement('div');
     const span = document.createElement('span');
     span.classList.add("material-icons");
@@ -105,8 +104,8 @@ function deleteBook(e){
         bookInputs[2].textContent = `Pages: ${myLibrary[newID].pages}`;
         bookInputs[3].textContent = `Read: ${myLibrary[newID].read}`;
     }
-    const books = document.querySelector(`#book${myLibrary.length}`);
-    books.classList.add('invi');
+    const deletedBookElement = document.querySelector(`#book${myLibrary.length}`);
+    deletedBookElement.remove();
     myLibrary.splice(bID - 1, 1);
 }
 
@@ -123,10 +122,6 @@ bookForm.addEventListener('click', (e)=>{
     e.stopPropagation();
 })
 
-for(let i = 1; i <= 8; i++){
-    createBookGrid(i);
-}
-
 const submitBtn = document.querySelector('.submitBtn');
 submitBtn.addEventListener('click', ()=>{
     let bID;
@@ -142,7 +137,7 @@ submitBtn.addEventListener('click', ()=>{
         editBook(bID);
     }
     clearForm();
-    if(bID > 8){ createBookGrid(bID); }
+    createBookButton(bID);
     const bookInputs = document.querySelectorAll(`#book${bID} .bookInfo .bookInput`);
     bookInputs[0].textContent = `Title: ${myLibrary[bID - 1].title}`;
     bookInputs[1].textContent = `Author: ${myLibrary[bID - 1].author}`;
@@ -150,12 +145,12 @@ submitBtn.addEventListener('click', ()=>{
     bookInputs[3].textContent = `Read: ${myLibrary[bID - 1].read}`;
     document.querySelector(`#book${bID}`).classList.remove('invi');
     document.querySelector(`#book${bID}`).classList.add('bookBackground');
-})
 
-const editInfo = document.querySelectorAll('.bookshelf button');
-editInfo.forEach(info => {
-    info.addEventListener('click', openEditForm);
-})
+    const editInfo = document.querySelectorAll('.bookshelf button');
+    editInfo.forEach(info => {
+        info.addEventListener('click', openEditForm);
+    })
 
-const btnDelete = document.querySelectorAll('.btnDelete');
-btnDelete.forEach(button => button.addEventListener('click', deleteBook));
+    const btnDelete = document.querySelectorAll('.btnDelete');
+    btnDelete.forEach(button => button.addEventListener('click', deleteBook));
+})
