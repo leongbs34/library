@@ -36,6 +36,7 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
 header{
     display: flex;
     justify-content: center;
@@ -49,9 +50,9 @@ header{
 
 #main-background{
     display: flex;
-    height: 90%;
+    height: 100vh;
     width: 100%;
-    background-image: url(wall.jpg);
+    background: url(wall.jpg);
 }
 
 .bookshelf{
@@ -59,11 +60,11 @@ header{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     position: relative;
     width: 80%;
-    min-height: 60%;
-    /* height: auto; */
+    height: max-content;
     left: 6%;
     top: 20%;
-    gap: 5% 2%;
+    gap: 20px 15px;
+    padding-bottom: 2vh;
 }
 
 #addBtn{
@@ -105,10 +106,12 @@ header{
     overflow: hidden;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.431);
     border: 2px solid white;
+    position: fixed;
+    top: 30%;
 }
 
 #formBackground{
-    position: absolute;
+    position: fixed;
     display: flex;
     background-color:rgba(0, 0, 0, 0.6);
     height: 100%;
@@ -186,6 +189,7 @@ form{
                 0 1px 10px 0 rgba(0, 0, 0, 0.12), 
                 0 2px 4px -1px rgba(0, 0, 0, 0.3);
     text-shadow: 2px 2px 5px #000000;
+    height: 18em;
 }
 
 .bookBackground:hover{

@@ -131,13 +131,13 @@ submitBtn.addEventListener('click', ()=>{
         bID = myLibrary.length + 1;
         let tempbook = new book(inputs[0].value, inputs[1].value, inputs[2].value, inputs[3].value, bID);
         addBookToLibrary(tempbook);
+        createBookButton(bID);
     }
     else{
         bID = parseInt(labelID.textContent);
         editBook(bID);
     }
     clearForm();
-    createBookButton(bID);
     const bookInputs = document.querySelectorAll(`#book${bID} .bookInfo .bookInput`);
     bookInputs[0].textContent = `Title: ${myLibrary[bID - 1].title}`;
     bookInputs[1].textContent = `Author: ${myLibrary[bID - 1].author}`;
