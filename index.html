@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="styles.css" rel='stylesheet'>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap" rel="stylesheet">
-        <title>Library</title>
-    </head>
-    <body>
-        <header>
-            <div id="titleGrid">
-                <div class= "topTitle">
-                    <a href='https://github.com/stapler34' target='_blank'>Leong's</a>
-                </div>
-                <div class= "btmTitle">Library</div>
-            </div>
-        </header>
+	<head>
+		<link href="styles.css" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Library</title>
+	</head>
+	<body>
+		<header>
+			<div id="titleGrid">
+				<div class="topTitle">
+					<a href="https://github.com/leongbs34" target="_blank">Leong's</a>
+				</div>
+				<div class="btmTitle">Library</div>
+			</div>
+		</header>
 
-        <div id="main-background">
-            <button id= "addBtn" class="material-icons">add</button>
-            <div class="bookshelf"></div> 
-        </div>
+		<div id="main-background">
+			<button id="addBtn" class="material-icons">add</button>
+			<div class="bookshelf"></div>
+		</div>
 
-        <div class='bg'></div>
-        
-        <div id='formBackground' class='invi'>
-            <div id='bookForm'>
-                <div id='formHeader'>
-                    <div class='headerText'>New Book</div>
-                </div>
-                <form>
-                    <label for='title'>Title</label><br>
-                    <input type="text" name="title" placeholder="Title"><br>
+		<div class="bg"></div>
 
-                    <label for='author'>Author</label><br>
-                    <input type="text" name="author" placeholder="Author"><br>
+		<div id="formBackground" class="invi">
+			<div id="bookForm">
+				<div id="formHeader">
+					<div class="headerText">New Book</div>
+				</div>
+				<form>
+					<label for="title">Title</label><br />
+					<input type="text" name="title" placeholder="Title" /><br />
 
-                    <label for='pages'>Pages</label><br>
-                    <input type="text" name="pages" placeholder="Pages"><br>
+					<label for="author">Author</label><br />
+					<input type="text" name="author" placeholder="Author" /><br />
 
-                    <label for='bID' style='display: none;'></label><br>
+					<label for="pages">Pages</label><br />
+					<input type="text" name="pages" placeholder="Pages" /><br />
 
-                    <label for='read' class='switch'>Have you finished reading the book?
-                        <input type="checkbox" name='read'><br>
-                    </label><br>
+					<label for="bID" style="display: none"></label><br />
 
-                    <button class='submitBtn' type="button">Submit</button>
-                </form>
-            </div>
-        </div>
-        
-    </body>
-    <script src="script.js"></script>
+					<label for="read" class="switch">
+						Have you finished reading the book?
+						<input type="checkbox" name="read" />
+						<br /> </label
+					><br />
+
+					<button class="submitBtn" type="submit">Submit</button>
+				</form>
+			</div>
+		</div>
+	</body>
+	<script src="script.js"></script>
 </html>
